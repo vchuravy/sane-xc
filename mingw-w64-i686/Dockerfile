@@ -1,4 +1,5 @@
 FROM ubuntu:19.04
+ENV WINEARCH=win32
 RUN dpkg --add-architecture i386
 RUN apt-get update -y 
 RUN apt-get -y install make cmake git m4 python perl wget patch pkg-config build-essential vim
