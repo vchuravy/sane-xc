@@ -1,0 +1,6 @@
+1. `docker build mingw-w64-i686 -t mingw-w64-i686`
+2. `docker run -it -v $HOME/src/julia:/mnt/julia -v (pwd)/builds/win32:/mnt/build mingw-w64-i686 /bin/bash`
+  1. `make O=/mnt/build configure`
+  2. `cd /mnt/build`
+  3. `echo 'XC_HOST = i686-w64-mingw32' > Make.user`
+  4. `make -j4` maybe `make -j4 CXXFLAGS="-D__STDC_FORMAT_MACROS"`
